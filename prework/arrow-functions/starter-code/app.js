@@ -164,17 +164,25 @@ const message = name => `Hello, ${name}!`;
 console.log(message('Allie'));
 
 
+// old
 let Student = function (name, age, hometown) {
   this.name = name;
   this.age = age;
   this.hometown = hometown;
 };
 
+// new
+// let Student = (name, age, hometown) => ({
+//   name: name,
+//   age: age,
+//   hometown: hometown
+// })
+
 let joe = new Student('Joe', 'Schmoe', 100);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this code to break!
-// console.log(joe);
+console.log(joe);
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
@@ -184,9 +192,11 @@ Student.prototype.greeting = function () {
   return `Hi, my name is ${this.name}`;
 };
 
+// Student.prototype.greeting = () => `Hi, my name is ${this.name}`;
+
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
-// console.log(joe.greeting());
+console.log(joe.greeting());
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
@@ -197,7 +207,7 @@ Student.courseName = function () {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(Student.courseName());
+console.log(Student.courseName());
 
 
 
@@ -208,17 +218,17 @@ Student.prototype.scope = function () {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scope());
+console.log(joe.scope());
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scopeArrow());
+console.log(joe.scopeArrow());
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+// the object joe (name:joe, age: 'Schmoe', hometown:100)
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+//window object
 // 3. Explain why "this" is different when an arrow function is used.
-//
+// I think because the arrow functions are globally scoped, they don't have their own this, so it'll assume that the scope (this) is the window object.
