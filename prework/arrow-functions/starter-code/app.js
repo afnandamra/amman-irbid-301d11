@@ -187,11 +187,12 @@ console.log(joe);
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
 
-
+// old
 Student.prototype.greeting = function () {
   return `Hi, my name is ${this.name}`;
 };
 
+// new
 // Student.prototype.greeting = () => `Hi, my name is ${this.name}`;
 
 // TODO: Uncomment the following line of code to see the output in the browser console
@@ -201,10 +202,13 @@ console.log(joe.greeting());
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
 
+// old
+// Student.courseName = function () {
+//   return 'This student is enrolled in Code 301.';
+// };
 
-Student.courseName = function () {
-  return 'This student is enrolled in Code 301.';
-};
+// new
+Student.courseName = () => 'This student is enrolled in Code 301.';
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(Student.courseName());
